@@ -1,0 +1,7 @@
+services:
+  templates:
+    container_name: frontend
+    build: ./frontend
+    restart: unless_stopped
+    ports:
+      - "4000:4000"
