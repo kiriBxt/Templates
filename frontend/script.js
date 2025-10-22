@@ -1,6 +1,7 @@
 class Client {
+  user = null;
   constructor() {
-    this.HTMLElement = document.querySelector("main");
+    this.HTMLElement = document.querySelector("#root");
     this.listeners = new Listeners();
     this.router = new Router(this);
   }
@@ -21,7 +22,7 @@ class Router {
 
   async getModule(path) {
     try {
-      this.currModule = (await import(`./pages${path}.js`)).default;
+      this.currModule = (await import(`./pages${path}/index.js`)).default;
     } catch (error) {
       console.error("Module load error:", error);
     }

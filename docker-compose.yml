@@ -1,7 +1,15 @@
 services:
-  templates:
-    container_name: frontend
-    build: ./frontend
-    restart: unless_stopped
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: template_frontend
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx/conf.d:/etc/nginx/conf.d
+  #     - ./frontend:/frontend:ro
+
+  backend:
+    build: ./backend
+    container_name: template_backend
     ports:
-      - "4000:4000"
+      - "5000:5000"
