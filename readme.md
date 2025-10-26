@@ -6,7 +6,7 @@ Containerized web application with a Node.js backend, PostgreSQL database, and a
 
 ## Architecture
 
-```text
+````text
 nginx/
 └── conf.d/
     └── template.conf          # Reverse proxy and static serving
@@ -44,9 +44,9 @@ docker-compose.yml
 
 ---
 
-## Setup
+### Setup
 
-### 1. Environment
+1.  Environment
 
 Create `.env` inside `/backend`:
 
@@ -66,7 +66,7 @@ POSTGRES_PORT="5432"
 POSTGRES_DB ="postgres"
 
 BCRYPT_SALTROUNDS="1"
-```
+````
 
 2. Run
    docker-compose up --build
