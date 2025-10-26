@@ -6,7 +6,7 @@ Containerized web application with a Node.js backend, PostgreSQL database, and a
 
 ## Architecture
 
-nginx/
+nginx/ \n
 conf.d/template.conf # Reverse proxy and static serving
 backend/
 src/
