@@ -6,27 +6,28 @@ Containerized web application with a Node.js backend, PostgreSQL database, and a
 
 ## Architecture
 
+```text
 nginx/
 └── conf.d/
-└── template.conf # Reverse proxy and static serving
+    └── template.conf          # Reverse proxy and static serving
 backend/
 ├── src/
-│ ├── index.js # App entry
-│ ├── psql.js # PostgreSQL client
-│ ├── hooks/ # Request validators and middleware
-│ ├── psql_scripts/ # Schema, indexes, seeds
-│ ├── routes/ # REST endpoints
-│ └── sockets/ # WebSocket handling
+│   ├── index.js               # App entry
+│   ├── psql.js                # PostgreSQL client
+│   ├── hooks/                 # Request validators and middleware
+│   ├── psql_scripts/          # Schema, indexes, seeds
+│   ├── routes/                # REST endpoints
+│   └── sockets/               # WebSocket handling
 ├── package.json
 ├── dockerfile
-└── .env # Environment variables
+└── .env                       # Environment variables
 frontend/
 └── template/
-├── index.html
-├── script.js
-├── style.css
-├── library/ # Client, Router, User, Listeners
-└── pages/ # Auth and Home pages
+    ├── index.html
+    ├── script.js
+    ├── style.css
+    ├── library/               # Client, Router, User, Listeners
+    └── pages/                 # Auth and Home pages
 docker-compose.yml
 
 yaml
