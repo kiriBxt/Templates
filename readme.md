@@ -30,6 +30,8 @@ frontend/
     └── pages/                 # Auth and Home pages
 docker-compose.yml
 
+```
+
 yaml
 Copy code
 
