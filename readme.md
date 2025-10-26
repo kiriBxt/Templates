@@ -52,11 +52,13 @@ Copy code
 ## Setup
 
 1. Environment
+```text
 Create `.env` inside `/backend`:
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=appdb
 PORT=8080
+```
 2. Run
 ```bash
 Copy code
@@ -69,9 +71,6 @@ Tables and seeds are in:
 
 ```bash
 Copy code
-backend/src/psql_scripts/
-Development
-Command	Description
 docker-compose up	Start full stack
 npm install (backend)	Install dependencies
 npm run dev	Local dev mode (no Docker)
