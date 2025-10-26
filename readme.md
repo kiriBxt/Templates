@@ -51,9 +51,8 @@ Copy code
 
 ## Setup
 
-### 1. Environment
+1. Environment
 Create `.env` inside `/backend`:
-```bash
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=appdb
