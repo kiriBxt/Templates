@@ -73,4 +73,8 @@ const start = async () => {
     process.exit(1);
   }
 };
+
 start();
+
+process.on("SIGTERM", () => fastify.close());
+process.on("SIGINT", () => fastify.close());
