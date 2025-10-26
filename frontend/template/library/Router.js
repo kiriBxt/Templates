@@ -1,17 +1,4 @@
-class Client {
-  user = null;
-  constructor() {
-    this.HTMLElement = document.querySelector("#root");
-    this.listeners = new Listeners();
-    this.router = new Router(this);
-  }
-
-  print() {
-    console.log(this);
-  }
-}
-
-class Router {
+export default class Router {
   currPath = null;
   currModule = null;
 
@@ -22,9 +9,10 @@ class Router {
 
   async getModule(path) {
     try {
-      this.currModule = (await import(`./pages${path}/index.js`)).default;
+      this.currModule = (await import(`../pages${path}/index.js`)).default;
     } catch (error) {
       console.error("Module load error:", error);
+      this.route("/");
     }
   }
 
@@ -46,6 +34,8 @@ class Router {
     await this.getModule(path);
     await this.setModule();
 
+    this.client.listeners.clearEvents();
+
     this.currPath = path;
 
     if (!popstate) {
@@ -62,8 +52,8 @@ class Router {
   }
 
   async initialize() {
-    document.addEventListener("click", async (e) => {
-      if (e.target.matches("[link]") && e.target.tagName === "A") {
+    window.addEventListener("click", async (e) => {
+      if (e.target.matches("[link]") && e.target.closest("a")) {
         e.preventDefault();
         const path = e.target.getAttribute("href");
         await this.route(path);
@@ -74,11 +64,3 @@ class Router {
     if (!this.currPath) await this.route(location.pathname);
   }
 }
-
-class Listeners {
-  list = [];
-  add(action, element, func) {}
-  clear() {}
-}
-
-const client = new Client();

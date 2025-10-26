@@ -1,12 +1,12 @@
 services:
-  # nginx:
-  #   image: nginx:alpine
-  #   container_name: template_frontend
-  #   ports:
-  #     - "80:80"
-  #   volumes:
-  #     - ./nginx/conf.d:/etc/nginx/conf.d
-  #     - ./frontend:/frontend:ro
+  nginx:
+    image: nginx:alpine
+    container_name: template_frontend
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./frontend:/frontend:ro
 
   backend:
     build: ./backend
